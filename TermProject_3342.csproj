@@ -57,11 +57,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MerchantStore.asmx" />
     <Content Include="RegisterUser.aspx" />
+    <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
+    <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.pdb" />
+    <Content Include="UtilitiesLibrary\bin\Release\UtilitiesLibrary.dll" />
+    <Content Include="UtilitiesLibrary\bin\Release\UtilitiesLibrary.pdb" />
+    <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.dll" />
+    <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.pdb" />
+    <Content Include="UtilitiesLibrary\obj\Release\UtilitiesLibrary.csproj.FileListAbsolute.txt" />
+    <Content Include="UtilitiesLibrary\obj\Release\UtilitiesLibrary.dll" />
+    <Content Include="UtilitiesLibrary\obj\Release\UtilitiesLibrary.pdb" />
+    <Content Include="UtilitiesLibrary\UtilitiesLibrary.csproj" />
+    <Content Include="UtilitiesLibrary\UtilitiesLibrary.csproj.user" />
     <Content Include="Web.config" />
     <Content Include="LogIn.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MerchantStore.asmx.cs">
+      <DependentUpon>MerchantStore.asmx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterUser.aspx.cs">
       <DependentUpon>RegisterUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -77,8 +93,18 @@
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UtilitiesLibrary\Connection.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UtilitiesLibrary\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache" />
+    <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
