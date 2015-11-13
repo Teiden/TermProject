@@ -1,0 +1,5 @@
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\bin\Debug\UtilitiesLibrary.pdb
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\obj\Debug\UtilitiesLibrary.dll
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\obj\Debug\UtilitiesLibrary.pdb
