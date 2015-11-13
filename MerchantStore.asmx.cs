@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;        
 
-namespace CIS3342TermProject
+namespace TermProject_3342
 {
     /// <summary>
     /// Summary description for MerchantStore
@@ -29,7 +29,9 @@ namespace CIS3342TermProject
         [WebMethod]
         public DataSet GetDepartments()
         {
-            //strSQL = "SELECT * FROM TP_Department";
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "GetDepartments";
             DataSet department;
@@ -41,11 +43,13 @@ namespace CIS3342TermProject
         [WebMethod]
         public DataSet GetProductCatalog(String DepartmentNumber)
         {
-
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
             strSQL = "SELECT * FROM TP_Poduct Where DepartmentNumber = '" + DepartmentNumber + "'";
             DataSet ProductCatalog;
             ProductCatalog = objDB.GetDataSet(strSQL);
-
+            objDB.CloseConnection();
             return ProductCatalog;
         }
         [WebMethod]
