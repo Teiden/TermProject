@@ -34,7 +34,7 @@
 
             <h3>Fuel</h3>
 
-           <p>Fuel can be a by-product of hemp cultivation. One fuel would be biodiesel because of the oils in the seeds and stalk of the hemp, another would be biofuel from the fibrous stalks</p3>
+           <p>Fuel can be a by-product of hemp cultivation. One fuel would be biodiesel because of the oils in the seeds and stalk of the hemp, another would be biofuel from the fibrous stalks</p>
                <br /><br />
             <a href="http://www.hempbasics.com/shop/hemp-information">Source: HempBasics</a>
         </div>
@@ -42,12 +42,13 @@
             <h2>Welcome to our Emporium</h2>
             <h2>This is a member only site</h2>
             <h3>Are you:</h3>
+
             <table style="text-align:center; width:100%">
                 <tr>
                     <td>
-                       <%-- //<a href="LogIn.aspx" type="button">An Existing Client</a>--%>
-                        <asp:Button ID="btnExist" runat="server" Text="An Existing Member" href="LogIn.aspx" OnClick="btnExist_Click"/></td>
-               
+
+                        <asp:Button ID="btnExist" runat="server" Text="An Existing Member" OnClick="btnExist_Click" /></td>
+
                     <td>
                         <asp:Button ID="btnNew" runat="server" Text="A New Member" OnClick="btnNew_Click" /></td>
                 </tr>
