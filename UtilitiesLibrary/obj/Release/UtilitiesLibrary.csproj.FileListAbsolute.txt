@@ -1,0 +1,4 @@
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\bin\Release\UtilitiesLibrary.dll
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\bin\Release\UtilitiesLibrary.pdb
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\obj\Release\UtilitiesLibrary.dll
+Z:\CIS3342\CIS3342Solution\CIS3342Solution\UtilitiesLibrary\obj\Release\UtilitiesLibrary.pdb
