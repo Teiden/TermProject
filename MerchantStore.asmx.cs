@@ -7,7 +7,7 @@ using UtilitiesLibrary;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;        
+using System.IO;
 
 namespace TermProject_3342
 {
@@ -21,10 +21,10 @@ namespace TermProject_3342
     // [System.Web.Script.Services.ScriptService]
     public class MerchantStore : System.Web.Services.WebService
     {
-        DBConnect objDB = new DBConnect();
-        SqlCommand objCommand = new SqlCommand();
-        string strSQL;
-        
+    //    DBConnect objDB = new DBConnect();
+    //    SqlCommand objCommand = new SqlCommand();
+    //    string strSQL;
+
 
         [WebMethod]
         public DataSet GetDepartments()
@@ -52,7 +52,6 @@ namespace TermProject_3342
             objDB.CloseConnection();
             return ProductCatalog;
         }
-        [WebMethod]
-        public Boolean Purchase(String ProductID, int Quantity, String siteID, String APIKey, String[] CustomerCreditCardInformation)
+       
     }
 }

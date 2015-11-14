@@ -1,0 +1,9 @@
+﻿  body {
+            background-image:url("Images/Hemp.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;       
+        }
+        h1 {
+        background-color:#e0ffff;
+        font-size:64px;
+        }
