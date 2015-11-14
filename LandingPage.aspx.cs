@@ -13,5 +13,15 @@ namespace TermProject_3342
         {
 
         }
+
+        protected void btnExist_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LogIn.aspx");
+        }
+
+        protected void btnNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterUser.aspx");
+        }
     }
 }

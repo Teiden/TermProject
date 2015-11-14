@@ -1,9 +1,45 @@
-﻿  body {
+﻿body {
             background-image:url("Images/Hemp.jpg");
             background-repeat:no-repeat;
             background-size:cover;       
-        }
-        h1 {
+      }
+h1 {
+            background-color:#e0ffff;
+            font-size:64px;
+            opacity:.75;
+   }
+
+p {
+            /*border: 1px dotted black;*/
+            margin: 0;
+            padding: 10px;
+            padding-left: 15px;
+            background-color:#e0ffff;
+            font-weight:900;
+  }
+div {
+    /*border: 1px dotted black;*/
+    margin: 0;
+    /*padding: 10px;*/
+    padding-left: 15px;
+    background-color:#e0ffff;
+    width:40%;
+    opacity:.75;
+
+}
+h2 {
+    text-align:center;
+}
+h3 {
+    text-align:center;
+}
+div.absolute {
+        position:absolute;
+        padding-left: 15px;
         background-color:#e0ffff;
-        font-size:64px;
-        }
+        width:30%;
+        opacity:.75;
+        top:40%;
+        left:55%;
+
+}
