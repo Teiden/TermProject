@@ -11,7 +11,7 @@
     <h1 style="text-align:center">Tal and Allen, Happy Hipsters Selling Hemp</h1>
     <form id="form1" runat="server">
         
-        <div>
+        <div class="absoluteLeft">
 
 
             <h2 style="text-align:center">Uses of Hemp</h2>
@@ -38,7 +38,7 @@
                <br /><br />
             <a href="http://www.hempbasics.com/shop/hemp-information">Source: HempBasics</a>
         </div>
-        <div class="absolute">
+        <div class="absoluteRight">
             <h2>Welcome to our Emporium</h2>
             <h2>This is a member only site</h2>
             <h3>Are you:</h3>
@@ -55,6 +55,11 @@
             </table>
             <br /><br />
 
+        </div>
+        <div class="merchant">
+            <h2>Are you a merchant?</h2>
+            <h3>Want to sell your products on our site?</h3>
+            <p style="text-align:center"><a href="MerchantSignIn.aspx">Visit our merchant portal</a></p>
         </div>
     </form>
 </body>
