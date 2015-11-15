@@ -2,12 +2,13 @@
             background-image:url("Images/Hemp.jpg");
             background-repeat:no-repeat;
             background-size:cover;       
-      }
+}
 h1 {
             background-color:#e0ffff;
             font-size:64px;
             opacity:.75;
-   }
+            text-align:center;
+}
 
 p {
             /*border: 1px dotted black;*/
@@ -16,16 +17,13 @@ p {
             padding-left: 15px;
             background-color:#e0ffff;
             font-weight:900;
-  }
+ }
 div {
-    /*border: 1px dotted black;*/
     margin: 0;
-    /*padding: 10px;*/
     padding-left: 15px;
     background-color:#e0ffff;
     width:40%;
     opacity:.75;
-
 }
 h2 {
     text-align:center;
@@ -33,13 +31,67 @@ h2 {
 h3 {
     text-align:center;
 }
-div.absolute {
+div.absoluteRight {
         position:absolute;
         padding-left: 15px;
         background-color:#e0ffff;
         width:30%;
         opacity:.75;
-        top:40%;
+        top:20%;
         left:55%;
 
+}
+div.absoluteLeft {
+        position:absolute;
+        padding-left: 15px;
+        background-color:#e0ffff;
+        width:30%;
+        opacity:.75;
+        top:20%;
+        left:15%;
+
+}
+div.merchant {
+        position:absolute;
+        padding-left: 15px;
+        background-color:#e0ffff;
+        width:30%;
+        opacity:.75;
+        top:50%;
+        left:55%;
+
+}
+div.footer {
+    position:absolute;
+        padding-left: 15px;
+        background-color:#e0ffff;
+        width:85%;
+        height:10%;
+        opacity:.75;
+        top:90%;       
+
+}
+.register {
+    border-style: solid;
+    border-color: inherit;
+    border-width: medium;
+    width:90%;
+    height:60px;
+    text-align:center;
+    margin-left:25px;
+    font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+    
+}
+.login {
+    border-style: solid;
+    border-color: inherit;
+    border-width: medium;
+    width:25%;
+    height:30px;
+    text-align:center;
+    margin-left:75%;
+    font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+   
 }

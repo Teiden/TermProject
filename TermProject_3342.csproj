@@ -60,6 +60,7 @@
     <Content Include="Images\Hemp.jpg" />
     <Content Include="LandingPage.aspx" />
     <Content Include="LogIn.aspx" />
+    <Content Include="MerchantSignIn.aspx" />
     <Content Include="MerchantStore.asmx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantSignIn.aspx.cs">
+      <DependentUpon>MerchantSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantSignIn.aspx.designer.cs">
+      <DependentUpon>MerchantSignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="MerchantStore.asmx.cs">
       <DependentUpon>MerchantStore.asmx</DependentUpon>
