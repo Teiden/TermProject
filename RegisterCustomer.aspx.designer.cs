@@ -10,7 +10,7 @@
 namespace TermProject_3342 {
     
     
-    public partial class Hi {
+    public partial class WebForm1 {
         
         /// <summary>
         /// form1 control.

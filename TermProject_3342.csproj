@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Images\Hemp.jpg" />
     <Content Include="LandingPage.aspx" />
+    <Content Include="LogIn.aspx" />
     <Content Include="MerchantStore.asmx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
@@ -74,6 +75,7 @@
     <Content Include="UtilitiesLibrary\UtilitiesLibrary.csproj" />
     <Content Include="UtilitiesLibrary\UtilitiesLibrary.csproj.user" />
     <Content Include="Web.config" />
+    <Content Include="RegisterCustomer.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LandingPage.aspx.cs">
@@ -82,6 +84,13 @@
     </Compile>
     <Compile Include="LandingPage.aspx.designer.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="MerchantStore.asmx.cs">
       <DependentUpon>MerchantStore.asmx</DependentUpon>
@@ -95,6 +104,13 @@
     <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="UtilitiesLibrary\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="RegisterCustomer.aspx.cs">
+      <DependentUpon>RegisterCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterCustomer.aspx.designer.cs">
+      <DependentUpon>RegisterCustomer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="UtilitiesLibrary\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />

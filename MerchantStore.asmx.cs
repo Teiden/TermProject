@@ -52,6 +52,22 @@ namespace TermProject_3342
             objDB.CloseConnection();
             return ProductCatalog;
         }
+
+        //[WebMethod]
+        //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
+        //{
+        //    DBConnect objDB = new DBConnect();
+        //    SqlCommand objCommand = new SqlCommand();
+        //    objCommand.CommandType = CommandType.StoredProcedure;
+        //    objCommand.CommandText = "RegisterSite";
+        //    DataSet department = objDB.GetDataSetUsingCmdObj(objCommand);
+        //    objDB.CloseConnection();
+        //    return true;
+            
+
+
+
+        //}
        
     }
 }

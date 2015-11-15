@@ -21,7 +21,7 @@ namespace TermProject_3342
 
         protected void btnNew_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegisterUser.aspx");
+            Response.Redirect("RegisterCustomer.aspx");
         }
     }
 }

@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace TermProject_3342
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class LogIn : System.Web.UI.Page
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
 
@@ -46,9 +47,9 @@ namespace TermProject_3342
                 if (chkForget.Checked == false || chkRemember.Checked == false)
                 {
                     lblError.Text = "";
-                    if (pxy.CheckLogin(txtUsername.Text, txtPassword.Text))
-                    {
-
+                  //  if (pxy.CheckLogin(txtUsername.Text, txtPassword.Text))
+                   // {
+                        //login();
                         if (chkRemember.Checked)
                         {
                             HttpCookie userDataCookie = new HttpCookie("UserLogin");
@@ -67,15 +68,13 @@ namespace TermProject_3342
                         Session["Username"] = txtUsername.Text;
                         Response.Redirect("Home.aspx");
 
-                    }
+                  //  }
 
-
-                    else
-                    {
-                        lblError.Text = "No matching username and password found!";
-                    }
+                  //  else
+                  //  {
+                  //      lblError.Text = "No matching username and password found!";
+                  //  }
                 }
-
 
                 else
                 {
@@ -83,7 +82,6 @@ namespace TermProject_3342
                 }
             }
         }
-
 
 
 

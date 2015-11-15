@@ -4,8 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
     <title></title>
+    <link href="Css.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,13 +20,14 @@
         <p>
             <asp:Label ID="lblUsername" runat="server" style="z-index: 1; left: 430px; top: 226px; position: absolute" Text="Username"></asp:Label>
         </p>
-        <asp:Label ID="lblHeader" runat="server" style="z-index: 1; left: 528px; top: 127px; position: absolute" Text="Welcome!"></asp:Label>
-        <asp:Label ID="lblSubHeader" runat="server" style="z-index: 1; left: 424px; top: 169px; position: absolute" Text="Login to begin Planning Your Get-Away!"></asp:Label>
+        <asp:Label ID="lblHeader" runat="server" style="z-index: 1; left: 520px; top: 127px; position: absolute" Text="Welcome Back!"></asp:Label>
+        <asp:Label ID="lblSubHeader" runat="server" style="z-index: 1; left: 489px; top: 164px; position: absolute" Text="Login to Access WebStore"></asp:Label>
         <asp:CheckBox ID="chkForget" runat="server" style="z-index: 1; left: 500px; top: 337px; position: absolute" Text="Forget Me" ToolTip="Forget information stored as cookie" />
         <p>
-        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 457px; top: 376px; position: absolute" Text="Submit" />
+        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 522px; top: 372px; position: absolute; width: 66px;" Text="Submit" />
         </p>
-        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 554px; top: 376px; position: absolute" Text="Register" OnClick="btnRegister_Click" />
+        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 523px; top: 460px; position: absolute; height: 26px; width: 70px;" Text="Register" OnClick="btnRegister_Click" />
+        <asp:Label ID="lblDontHaveAccount" runat="server" style="z-index: 1; left: 483px; top: 435px; position: absolute" Text="(Don't Have an Account?)"></asp:Label>
     </form>
 </body>
 </html>
