@@ -15,6 +15,7 @@ namespace TermProject_3342
 {
     public partial class MerchantSignIn : System.Web.UI.Page
     {
+        MerchantStoreSvc.MerchantStore pxy = new MerchantStoreSvc.MerchantStore();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -41,7 +42,22 @@ namespace TermProject_3342
             }
             else
             {
-
+                DataSet validEmail = pxy.EmailExists(mercEmail);
+                if (validEmail.Tables.Count <= 0)
+	            {
+		            lblResponse.Text = "Email not Found!";
+                    lblResponse.Visible = true;
+	            }
+                else if (!validEmail.Tables.Contains(mercPassword))
+	            {
+		            lblResponse.Text = "Incorrect Password!";
+                    lblResponse.Visible = true;                       
+	            }
+                else
+	            {
+                    //DataSet API = pxy.
+	            }
+	
             }
         }
     }

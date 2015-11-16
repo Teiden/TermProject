@@ -21,9 +21,9 @@ namespace TermProject_3342
     // [System.Web.Script.Services.ScriptService]
     public class MerchantStore : System.Web.Services.WebService
     {
-    //    DBConnect objDB = new DBConnect();
-    //    SqlCommand objCommand = new SqlCommand();
-    //    string strSQL;
+        //    DBConnect objDB = new DBConnect();
+        //    SqlCommand objCommand = new SqlCommand();
+        //    string strSQL;
 
 
         [WebMethod]
@@ -54,7 +54,8 @@ namespace TermProject_3342
         }
 
         [WebMethod]
-        public DataSet EmailExists(string mercEmail) { 
+        public DataSet EmailExists(string mercEmail)
+        {
 
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
@@ -65,7 +66,19 @@ namespace TermProject_3342
             objDB.CloseConnection();
             return Merchant;
         }
+        [WebMethod]
+        public DataSet APIExists(string mercAPI)
+        {
 
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
+            strSQL = "SELECT * FROM TP_Merchant_Site Where APIKey = '" + mercAPI + "'";
+            DataSet APIKey;
+            APIKey = objDB.GetDataSet(strSQL);
+            objDB.CloseConnection();
+            return APIKey;
+        }
         //[WebMethod]
         //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
         //{
@@ -76,11 +89,11 @@ namespace TermProject_3342
         //    DataSet department = objDB.GetDataSetUsingCmdObj(objCommand);
         //    objDB.CloseConnection();
         //    return true;
-            
+
 
 
 
         //}
-       
+
     }
 }
