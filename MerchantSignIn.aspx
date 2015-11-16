@@ -22,7 +22,8 @@
         <asp:TextBox CssClass="register" ID="txtMercAPIKey" runat="server" placeholder="Enter You API Key"></asp:TextBox>
         <br />
         <br />        
-        <asp:Button ID="btnMercLogIn" CSSClass="login" runat="server" OnClick="MercLogIn_Click" Text="Log Me In" />
+        <asp:Label ID="lblResponse" runat="server" BorderColor="Red" BorderStyle="Dashed" Font-Bold="True" Font-Italic="True" Visible="False"></asp:Label>
+        <asp:Button ID="btnMercLogIn" CSSClass="login" runat="server" OnClick="validateMercLogIn" Text="Log Me In" />
         <br />
         <br />
     </div>

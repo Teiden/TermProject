@@ -53,6 +53,19 @@ namespace TermProject_3342
             return ProductCatalog;
         }
 
+        [WebMethod]
+        public DataSet EmailExists(string mercEmail) { 
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
+            strSQL = "SELECT * FROM TP_Merchant Where MerchantEmail = '" + mercEmail + "'";
+            DataSet Merchant;
+            Merchant = objDB.GetDataSet(strSQL);
+            objDB.CloseConnection();
+            return Merchant;
+        }
+
         //[WebMethod]
         //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
         //{
