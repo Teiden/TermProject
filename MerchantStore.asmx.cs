@@ -143,21 +143,38 @@ namespace TermProject_3342
 
 
 
-        //[WebMethod]
-        //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
-        //{
-        //    DBConnect objDB = new DBConnect();
-        //    SqlCommand objCommand = new SqlCommand();
-        //    objCommand.CommandType = CommandType.StoredProcedure;
-        //    objCommand.CommandText = "RegisterSite";
-        //    DataSet department = objDB.GetDataSetUsingCmdObj(objCommand);
-        //    objDB.CloseConnection();
-        //    return true;
+        [WebMethod]
+        public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
+        {
+            try
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "RegisterSite";
+
+                objCommand.Parameters.AddWithValue("@SiteID", SiteID);
+                objCommand.Parameters.AddWithValue("@Description", Description);
+                objCommand.Parameters.AddWithValue("@APIKey", APIKey);
+                objCommand.Parameters.AddWithValue("@email", email);
+                objCommand.Parameters.AddWithValue("@ContactInformation", information);
+
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                objDB.CloseConnection();
+
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+           
+            
 
 
 
-
-        //}
+        }
 
     }
 }
