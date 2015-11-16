@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="TermProject_3342_MerchantStoreSvc_MerchantStore" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:60198/MerchantStore.asmx</Value>
+      <Value Profile="(Default)">http://cis-iis2.temple.edu/Fall2015/CIS3342_tuf30050/TermProjectWS/MerchantStore.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -42,6 +42,8 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         private System.Threading.SendOrPostCallback AddMerchantOperationCompleted;
         
+        private System.Threading.SendOrPostCallback RegisterSiteOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -97,6 +99,9 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event AddMerchantCompletedEventHandler AddMerchantCompleted;
+        
+        /// <remarks/>
+        public event RegisterSiteCompletedEventHandler RegisterSiteCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetDepartments", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -271,6 +276,43 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RegisterSite", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool RegisterSite(string SiteID, string Description, string APIKey, string email, string ContactInformation) {
+            object[] results = this.Invoke("RegisterSite", new object[] {
+                        SiteID,
+                        Description,
+                        APIKey,
+                        email,
+                        ContactInformation});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email, string ContactInformation) {
+            this.RegisterSiteAsync(SiteID, Description, APIKey, email, ContactInformation, null);
+        }
+        
+        /// <remarks/>
+        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email, string ContactInformation, object userState) {
+            if ((this.RegisterSiteOperationCompleted == null)) {
+                this.RegisterSiteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterSiteOperationCompleted);
+            }
+            this.InvokeAsync("RegisterSite", new object[] {
+                        SiteID,
+                        Description,
+                        APIKey,
+                        email,
+                        ContactInformation}, this.RegisterSiteOperationCompleted, userState);
+        }
+        
+        private void OnRegisterSiteOperationCompleted(object arg) {
+            if ((this.RegisterSiteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RegisterSiteCompleted(this, new RegisterSiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -441,6 +483,32 @@ namespace TermProject_3342.MerchantStoreSvc {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void RegisterSiteCompletedEventHandler(object sender, RegisterSiteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegisterSiteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RegisterSiteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

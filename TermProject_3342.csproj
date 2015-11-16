@@ -170,10 +170,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:60198/MerchantStore.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Fall2015/CIS3342_tuf30050/TermProjectWS/MerchantStore.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MerchantStoreSvc\</RelPath>
-      <UpdateFromURL>http://localhost:60198/MerchantStore.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Fall2015/CIS3342_tuf30050/TermProjectWS/MerchantStore.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
