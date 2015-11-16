@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Text;
 
 namespace TermProject_3342
 {
@@ -78,6 +79,66 @@ namespace TermProject_3342
             APIKey = objDB.GetDataSet(strSQL);
             objDB.CloseConnection();
             return APIKey;
+        }
+        [WebMethod]
+        public DataSet MerchantExists(string mercName)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
+            strSQL = "SELECT * FROM TP_Merchant Where MerchantName = '" + mercName + "'";
+            DataSet MerchantName;
+            MerchantName = objDB.GetDataSet(strSQL);
+            objDB.CloseConnection();
+            return MerchantName;
+
+        }
+        [WebMethod]
+        public string AddMerchant(string[] Merchant)
+        {
+            string API = genAPI();
+            string PageURL = Merchant[4];
+            string MerchantEmail = Merchant[1];
+            string MerchantPhone = Merchant[3];
+            string MerchantName = Merchant[0];
+            string MerchantPassword = Merchant[2];
+
+
+
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            string strSQL;
+            strSQL = "INSERT INTO TP_Merchant (MerchantURL, MerchantEmail, MerchantPhone, MerchantName, MerchantPassword)"
+                        + "Values (@PageURl, @MerchantEmail, @MerchantPhone, @MerchantName, @MerchantPassword)";
+            objCommand.Parameters.AddWithValue("@PageURL", PageURL);
+            objCommand.Parameters.AddWithValue("@MerchantEmail", MerchantEmail);
+            objCommand.Parameters.AddWithValue("@MerchantPhone", MerchantPhone);
+            objCommand.Parameters.AddWithValue("@MerchantPassword", MerchantPassword);
+
+            objDB.DoUpdateUsingCmdObj(objCommand);
+
+            strSQL = "INSERT INTO TP_Merchant_Site (APIKey) Values (@APIKey)";
+            objCommand.Parameters.AddWithValue("@APIKey", API);
+
+            objDB.DoUpdateUsingCmdObj(objCommand);
+
+            objDB.CloseConnection();
+
+            return API;
+
+        }
+
+        private string genAPI(int length = 20)
+        {
+            string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random rand = new Random();
+            StringBuilder API = new StringBuilder(length);
+
+            for (int i = 0; i < length; i++)
+            {
+                API.Append(characters[rand.Next(characters.Length)]);
+            }
+            return API.ToString();
         }
         //[WebMethod]
         //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)

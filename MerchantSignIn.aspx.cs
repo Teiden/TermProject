@@ -35,7 +35,7 @@ namespace TermProject_3342
             string mercPassword = txtMercPassword.Text;
             string mercAPI = txtMercAPIKey.Text;
 
-            if (mercAPI == "" || mercEmail =="" || mercPassword == "")
+            if (mercAPI == "" || mercEmail == "" || mercPassword == "")
             {
                 lblResponse.Text = "Please complete all fields before proceeding!";
                 lblResponse.Visible = true;
@@ -55,10 +55,66 @@ namespace TermProject_3342
 	            }
                 else
 	            {
-                    //DataSet API = pxy.
+                    DataSet API = pxy.APIExists(mercAPI);
+                    if (!API.Tables.Contains(mercAPI))
+                    {
+                        lblResponse.Text = "Invalid API!";
+                        lblResponse.Visible = true;
+                    }
+                    else
+                    {
+                        Response.Redirect("MerchantPage.aspx");
+                    }
 	            }
 	
             }
+        }
+        protected void MerchantRegistration(object sender, EventArgs e)
+        {
+            string mercName = txtMercName.Text;
+            string mercEmail = txtRegEmail.Text;
+            string password = txtRegPassword.Text;
+            string confPass = txtRegConfirm.Text;
+            string phone = txtPhone.Text;
+            string url = txtURL.Text;
+
+            if (mercName == "" || mercEmail == "" || password == "" || phone == "" || url == "")
+            {
+                lblRegResp.Text = "Please Complete All Fields";
+                lblRegResp.Visible = true;
+            }
+            else
+            {
+                DataSet MerchantName = pxy.MerchantExists(mercName);
+                if (MerchantName.Tables.Count > 0)
+                {
+                    lblRegResp.Text = "This Merchant Already Exists"; //Two Mercahnts cannot have the same name
+                    lblRegResp.Visible = true;
+                }
+                else
+                {
+                    string[] merchant = new string[5];
+                    merchant[0] = mercName;
+                    merchant[1] = mercEmail;
+                    merchant[2] = password;
+                    merchant[3] = phone;
+                    merchant[4] = url;
+
+                    string API = pxy.AddMerchant(merchant);
+
+                    lblRegResp.Text = "Here is your API Key:  " + API;
+                    lblRegResp.Visible = true;
+                }
+            }
+        }
+        protected void txtRegConfirm_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRegPassword.Text == txtRegConfirm.Text)
+            {
+                lblResponse.Text = "Passwords do not Match!";
+                lblResponse.Visible = true;
+            }
+           
         }
     }
 }

@@ -121,6 +121,15 @@ namespace TermProject_3342 {
         protected global::System.Web.UI.WebControls.TextBox txtURL;
         
         /// <summary>
+        /// lblRegResp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegResp;
+        
+        /// <summary>
         /// btnMercReg control.
         /// </summary>
         /// <remarks>

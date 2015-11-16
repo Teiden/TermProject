@@ -22,7 +22,7 @@
         <asp:TextBox CssClass="register" ID="txtMercAPIKey" runat="server" placeholder="Enter You API Key"></asp:TextBox>
         <br />
         <br />        
-        <asp:Label ID="lblResponse" runat="server" BorderColor="Red" BorderStyle="Dashed" Font-Bold="True" Font-Italic="True" Visible="False"></asp:Label>
+        <asp:Label ID="lblResponse" runat="server" BorderColor="Red" BorderStyle="Dashed" Font-Bold="True" Font-Italic="True" Visible="False" ForeColor="Red"></asp:Label>
         <asp:Button ID="btnMercLogIn" CSSClass="login" runat="server" OnClick="validateMercLogIn" Text="Log Me In" />
         <br />
         <br />
@@ -39,7 +39,7 @@
             <asp:TextBox CssClass="register" ID="txtRegPassword" runat="server" placeholder="Enter Your Password"></asp:TextBox>
             <br />
             <br />
-            <asp:TextBox CssClass="register" ID="txtRegConfirm" runat="server" placeholder="Confirm Your Password"></asp:TextBox>
+            <asp:TextBox CssClass="register" ID="txtRegConfirm" runat="server" placeholder="Confirm Your Password" OnTextChanged="txtRegConfirm_TextChanged"></asp:TextBox>
             <br />
             <br />
             <asp:TextBox CssClass="register" ID="txtPhone" runat="server" placeholder="Enter Your Phone Number"></asp:TextBox>
@@ -48,7 +48,8 @@
              <asp:TextBox CssClass="register" ID="txtURL" runat="server" placeholder="Enter Web-Method URL"></asp:TextBox>
             <br />
             <br />          
-            <asp:Button ID="btnMercReg" CssClass="login" runat="server" Text="Register Me" OnClick="btnMercReg_Click" />
+            <asp:Label ID="lblRegResp" runat="server" BorderColor="Red" BorderStyle="Dashed" Font-Bold="True" Font-Italic="True" ForeColor="Red" Visible="False"></asp:Label>
+            <asp:Button ID="btnMercReg" CssClass="login" runat="server" Text="Register Me" OnClick="MerchantRegistration" />
             <br />
             <br />
         </div>
