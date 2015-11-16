@@ -32,7 +32,6 @@ namespace TermProject_3342
         {
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
-            string strSQL;
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "GetDepartments";
             DataSet department;

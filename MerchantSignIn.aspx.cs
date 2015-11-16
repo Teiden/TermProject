@@ -34,7 +34,8 @@ namespace TermProject_3342
             string mercEmail = txtMercEmail.Text;
             string mercPassword = txtMercPassword.Text;
             string mercAPI = txtMercAPIKey.Text;
-
+            Session["Email"] = mercEmail;
+ 
             if (mercAPI == "" || mercEmail == "" || mercPassword == "")
             {
                 lblResponse.Text = "Please complete all fields before proceeding!";
