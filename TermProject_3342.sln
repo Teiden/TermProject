@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermProject_3342", "TermProject_3342.csproj", "{28A22A3D-612E-4B91-8CA9-762FBD6E0545}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchantStore", "..\MerchantStoreSvc\MerchantStore.csproj", "{DCE72FDD-A1FB-4900-BCAA-C7BF70019D6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{28A22A3D-612E-4B91-8CA9-762FBD6E0545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A22A3D-612E-4B91-8CA9-762FBD6E0545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A22A3D-612E-4B91-8CA9-762FBD6E0545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE72FDD-A1FB-4900-BCAA-C7BF70019D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE72FDD-A1FB-4900-BCAA-C7BF70019D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE72FDD-A1FB-4900-BCAA-C7BF70019D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE72FDD-A1FB-4900-BCAA-C7BF70019D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

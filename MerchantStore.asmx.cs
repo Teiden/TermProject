@@ -142,38 +142,38 @@ namespace TermProject_3342
 
 
 
-        [WebMethod]
-        public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
-        {
-            try
-            {
-                DBConnect objDB = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "RegisterSite";
+        //[WebMethod]
+        //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
+        //{
+        //    try
+        //    {
+        //        DBConnect objDB = new DBConnect();
+        //        SqlCommand objCommand = new SqlCommand();
+        //        objCommand.CommandType = CommandType.StoredProcedure;
+        //        objCommand.CommandText = "RegisterSite";
 
-                objCommand.Parameters.AddWithValue("@SiteID", SiteID);
-                objCommand.Parameters.AddWithValue("@Description", Description);
-                objCommand.Parameters.AddWithValue("@APIKey", APIKey);
-                objCommand.Parameters.AddWithValue("@email", email);
-                objCommand.Parameters.AddWithValue("@ContactInformation", information);
+        //        objCommand.Parameters.AddWithValue("@SiteID", SiteID);
+        //        objCommand.Parameters.AddWithValue("@Description", Description);
+        //        objCommand.Parameters.AddWithValue("@APIKey", APIKey);
+        //        objCommand.Parameters.AddWithValue("@email", email);
+        //        objCommand.Parameters.AddWithValue("@ContactInformation", information);
 
-                objDB.DoUpdateUsingCmdObj(objCommand);
-                objDB.CloseConnection();
+        //        objDB.DoUpdateUsingCmdObj(objCommand);
+        //        objDB.CloseConnection();
 
-                return true;
-            }
-            catch
-            {
+        //        return true;
+        //    }
+        //    catch
+        //    {
 
-                return false;
-            }
+        //        return false;
+        //    }
            
             
 
 
 
-        }
+        //}
 
     }
 }
