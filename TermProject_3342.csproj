@@ -80,6 +80,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -138,11 +139,21 @@
     <Compile Include="RegisterCustomer.aspx.designer.cs">
       <DependentUpon>RegisterCustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\MerchantStoreSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="UtilitiesLibrary\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache" />
     <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
+    <Content Include="Web References\MerchantStoreSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -154,6 +165,22 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:60198/MerchantStore.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MerchantStoreSvc\</RelPath>
+      <UpdateFromURL>http://localhost:60198/MerchantStore.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc_MerchantStore</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
