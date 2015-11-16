@@ -142,38 +142,45 @@ namespace TermProject_3342
 
 
 
-        //[WebMethod]
-        //public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, Contact information)
-        //{
-        //    try
-        //    {
-        //        DBConnect objDB = new DBConnect();
-        //        SqlCommand objCommand = new SqlCommand();
-        //        objCommand.CommandType = CommandType.StoredProcedure;
-        //        objCommand.CommandText = "RegisterSite";
+        [WebMethod]
+        public Boolean RegisterSite( string SiteName, string SiteDescription, string APIKey, string SiteEmail, string OwnerName, string Phone, string Street, string Suite, string City, string StateName, string Zipcode)
+        {
+            try
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "RegisterSite";
 
-        //        objCommand.Parameters.AddWithValue("@SiteID", SiteID);
-        //        objCommand.Parameters.AddWithValue("@Description", Description);
-        //        objCommand.Parameters.AddWithValue("@APIKey", APIKey);
-        //        objCommand.Parameters.AddWithValue("@email", email);
-        //        objCommand.Parameters.AddWithValue("@ContactInformation", information);
+                objCommand.Parameters.AddWithValue("@SiteName", SiteName);
+                objCommand.Parameters.AddWithValue("@SiteDescription", SiteDescription);
+                objCommand.Parameters.AddWithValue("@APIKey", APIKey);
+                objCommand.Parameters.AddWithValue("@SiteEmail", SiteEmail);
+                objCommand.Parameters.AddWithValue("@OwnerName", OwnerName);
+                objCommand.Parameters.AddWithValue("@Phone", Phone);
+                objCommand.Parameters.AddWithValue("@Street", Street);
+                objCommand.Parameters.AddWithValue("@Suite", Suite);
+                objCommand.Parameters.AddWithValue("@City", City);
+                objCommand.Parameters.AddWithValue("@StateName", StateName);
+                objCommand.Parameters.AddWithValue("@Zipcode", Zipcode);
+                
 
-        //        objDB.DoUpdateUsingCmdObj(objCommand);
-        //        objDB.CloseConnection();
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                objDB.CloseConnection();
 
-        //        return true;
-        //    }
-        //    catch
-        //    {
+                return true;
+            }
+            catch
+            {
 
-        //        return false;
-        //    }
-           
-            
+                return false;
+            }
 
 
 
-        //}
+
+
+        }
 
     }
 }
