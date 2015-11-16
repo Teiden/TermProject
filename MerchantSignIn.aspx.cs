@@ -39,6 +39,10 @@ namespace TermProject_3342
                 lblResponse.Text = "Please complete all fields before proceeding!";
                 lblResponse.Visible = true;
             }
+            else
+            {
+
+            }
         }
     }
 }
