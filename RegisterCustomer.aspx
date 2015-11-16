@@ -1,4 +1,4 @@
-﻿reg<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterCustomer.aspx.cs" Inherits="TermProject_3342.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterCustomer.aspx.cs" Inherits="TermProject_3342.WebForm1" %>
 
 <!DOCTYPE html>
 
