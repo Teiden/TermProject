@@ -109,6 +109,7 @@ namespace TermProject_3342
             string strSQL;
             strSQL = "INSERT INTO TP_Merchant (MerchantURL, MerchantEmail, MerchantPhone, MerchantName, MerchantPassword)"
                         + " Values (@PageURl, @MerchantEmail, @MerchantPhone, @MerchantName, @MerchantPassword)";
+
             objCommand.Parameters.AddWithValue("@PageURL", PageURL);
             objCommand.Parameters.AddWithValue("@MerchantEmail", MerchantEmail);
             objCommand.Parameters.AddWithValue("@MerchantPhone", MerchantPhone);
