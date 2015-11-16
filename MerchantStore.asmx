@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="MerchantStore.asmx.cs" Class="CIS3342TermProject.MerchantStore" %>
+﻿<%@ WebService Language="C#" CodeBehind="MerchantStore.asmx.cs" Class="TermProject_3342.MerchantStore" %>
