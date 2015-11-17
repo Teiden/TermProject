@@ -43,9 +43,10 @@ namespace TermProject_3342
                
                     if (complete == true)
                     {
-                        if (pxy.RegisterCustomer( CustomerEmail,  CustomerPassword,  CustomerFirstName,  CustomerLastName))
-                           
-                        {
+                       
+                        if    (true)     // (pxy.RegisterCustomer( CustomerEmail,  CustomerPassword,  CustomerFirstName,  CustomerLastName))
+                        { 
+                        
                             Response.Redirect("LogIn.aspx");
                         }
                         else
