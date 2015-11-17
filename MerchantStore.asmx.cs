@@ -176,12 +176,51 @@ namespace TermProject_3342
 
                 return false;
             }
-
-
-
-
-
         }
+
+
+        
+        [WebMethod]
+        public Boolean Purchase( string ProductID, int Quantity, string SiteID, string APIKey, string[] CustomerCardInfo)
+        {
+            try
+            {
+                DBConnect objDB = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "Purchase";
+
+                objCommand.Parameters.AddWithValue("@ProductID", ProductID);
+                objCommand.Parameters.AddWithValue("@Quantity", Quantity);
+                objCommand.Parameters.AddWithValue("@SiteID", SiteID);
+                objCommand.Parameters.AddWithValue("@APIKey", APIKey);
+                objCommand.Parameters.AddWithValue("@CustomerCardType", CustomerCardInfo[0]);
+                objCommand.Parameters.AddWithValue("@CustomerNameOnCard", CustomerCardInfo[1]);
+                objCommand.Parameters.AddWithValue("@CustomerBillingAddress", CustomerCardInfo[2]);
+                objCommand.Parameters.AddWithValue("@CustomerCity", CustomerCardInfo[3]);
+                objCommand.Parameters.AddWithValue("@CustomerState", CustomerCardInfo[4]);
+                objCommand.Parameters.AddWithValue("@CustomerZipcode", CustomerCardInfo[5]);
+                objCommand.Parameters.AddWithValue("@CustomerCardNumber", CustomerCardInfo[6]);
+                objCommand.Parameters.AddWithValue("@CustomerCardExpMonth", CustomerCardInfo[7]);
+                objCommand.Parameters.AddWithValue("@CustomerCardExpYear", CustomerCardInfo[8]);
+                objCommand.Parameters.AddWithValue("@CustomerCardCsc", CustomerCardInfo[9]);
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                objDB.CloseConnection();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
 
     }
 }

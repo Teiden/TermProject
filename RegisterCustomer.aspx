@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    
+     <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
     <title></title>
  
 
@@ -11,9 +13,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="absoluteLeft">
     
-    </div>
+    
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 90px; top: 150px; position: absolute; width: 97px;"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 210px; top: 150px; position: absolute; width: 97px;"></asp:TextBox>
         <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 90px; top: 230px; position: absolute; width: 215px;"></asp:TextBox>
@@ -43,6 +45,7 @@
         <asp:Label ID="lblIncompleteForm" runat="server" style="z-index: 1; left: 570px; top: 150px; position: absolute" Text="" Visible = "false"></asp:Label>
         <asp:Label ID="lblPasswordMismatch" runat="server" style="z-index: 1; left: 570px; top: 230px; position: absolute" Text="" Visible ="false"></asp:Label>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 70px; top: 34px; position: absolute" Text="Return" OnClick="btnLogin_Click" />
-    </form>
+   </div>
+         </form>
 </body>
 </html>

@@ -45,11 +45,11 @@ div.absoluteLeft {
         position:absolute;
         padding-left: 15px;
         background-color:#e0ffff;
-        width:30%;
+        width:65%;
         opacity:.75;
         top:20%;
         left:15%;
-
+    height: 597px;
 }
 div.merchant {
         position:absolute;
