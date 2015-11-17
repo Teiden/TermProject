@@ -47,9 +47,7 @@ namespace TermProject_3342
                 if (chkForget.Checked == false || chkRemember.Checked == false)
                 {
                     lblError.Text = "";
-                  //  if (pxy.CheckLogin(txtUsername.Text, txtPassword.Text))
-                   // {
-                        //login();
+                  
                         if (chkRemember.Checked)
                         {
                             HttpCookie userDataCookie = new HttpCookie("UserLogin");
@@ -66,14 +64,9 @@ namespace TermProject_3342
                             Response.Cookies.Add(termCookie);
                         }
                         Session["Username"] = txtUsername.Text;
-                        Response.Redirect("Home.aspx");
+                        Response.Redirect("MerchantPage.aspx");
 
-                  //  }
-
-                  //  else
-                  //  {
-                  //      lblError.Text = "No matching username and password found!";
-                  //  }
+              
                 }
 
                 else

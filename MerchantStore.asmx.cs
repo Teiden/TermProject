@@ -216,6 +216,56 @@ namespace TermProject_3342
         }
 
 
+        [WebMethod]
+        public Boolean RegisterCustomer(string CustomerEmail, string CustomerPassword, string CustomerFirstName, string CustomerLastName)
+        {
+
+
+
+            DBConnect objDB = new DBConnect();
+            String strSQL = "SELECT * FROM TP_Customer";
+            DataSet data = objDB.GetDataSet(strSQL);
+            DataTable dt = data.Tables[0];
+           
+
+            
+            
+
+            bool customerExists = false;
+
+            foreach (DataTable table in data.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    if (row["CustomerEmail"].ToString() == CustomerEmail)
+                    {
+                        customerExists = true;
+                    }
+                }
+            }
+
+
+            if (customerExists == false)
+            {
+
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "addCustomer";
+
+                objCommand.Parameters.AddWithValue("@CustomerEmail", CustomerEmail);
+                objCommand.Parameters.AddWithValue("@CustomerPassword", CustomerPassword);
+                objCommand.Parameters.AddWithValue("@FirstName", CustomerFirstName);
+                objCommand.Parameters.AddWithValue("@LastName", CustomerLastName);
+
+
+                objDB.DoUpdateUsingCmdObj(objCommand);
+
+            }
+
+            
+              return true;  
+        }
+       
 
 
 

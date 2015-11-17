@@ -9,91 +9,69 @@ namespace TermProject_3342
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+
+        MerchantStoreSvc.MerchantStore pxy = new MerchantStoreSvc.MerchantStore();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Value.ToString();
+            string CustomerEmail = txtEmail.Value.ToString();
             lblPasswordMismatch.Visible = false;
             lblIncompleteForm.Visible = false;
 
-            string name = txtFirstName.Text + " " + txtLastName.Text;
-            string address = txtStreetAddress.Text + " / " + txtZip.Text + " / " + txtCity.Text + " / " + txtState.Text;
+            string CustomerFirstName = txtFirstName.Text;
+            string CustomerLastName = txtLastName.Text;
+            string CustomerPassword = txtPassword.Text;
             bool complete = false;
 
-            //Checks that all forms are filled
-            if (txtFirstName.Text == "" || txtLastName.Text == "" || email == "" || txtPassword.Text == "" || txtPasswordConfirm.Text == "" || txtState.Text == "" || txtStreetAddress.Text == "" || txtCity.Text == "" || txtState.Text == "")
+
+            if (txtUsername.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || CustomerEmail == "" || CustomerPassword == "" || txtPasswordConfirm.Text == "" || txtState.Text == "" || txtStreetAddress.Text == "" || txtCity.Text == "" || txtState.Text == "")
             {
                 complete = false;
             }
             else
                 complete = true;
 
-            //Confirm both passwords match
-            if(txtPassword.Text == txtPasswordConfirm.Text)
-            { 
-                //Username is ommitted
-                if (txtUsername.Text == "")
-                {
-                    //Confirm all forms are filled
+            
+            if (txtPassword.Text == txtPasswordConfirm.Text)
+            {
+               
+               
                     if (complete == true)
                     {
-                        //if (pxy.CustomerRegisterEmail(txtPassword.Text, email, txtStreetAddress.Text, name, cbCookie.Checked, txtCity.Text, txtState.Text, txtZip.Text, txtPhone.Text))
-                        //{
-                            Response.Redirect("Login.aspx");
-                        //}
-                        //else
-                        //{
-                        //    lblIncompleteForm.Visible = true;
-                        //    lblIncompleteForm.Text = "Username or Email already exists in system";
-                        //}
+                        if (pxy.RegisterCustomer( CustomerEmail,  CustomerPassword,  CustomerFirstName,  CustomerLastName))
+                           
+                        {
+                            Response.Redirect("LogIn.aspx");
+                        }
+                        else
+                        {
+                            lblIncompleteForm.Visible = true;
+                            lblIncompleteForm.Text = "Email Already Exists";
+                        }
                     }
                     else
                     {
                         lblIncompleteForm.Visible = true;
-                        lblIncompleteForm.Text = "Please fill out all required forms (*)";
+                        lblIncompleteForm.Text = "Fill Out All Fields Marked With (*)";
                     }
-                }
-
-                //Username is entered
-                else
-                {
-                    //Confirm all forms are filled
-                    if (complete == true)
-                    {
-                        //if (pxy.CustomerRegister(txtUsername.Text, txtPassword.Text, email, txtStreetAddress.Text, name, cbCookie.Checked, txtCity.Text, txtState.Text, txtZip.Text, txtPhone.Text))
-                        //{
-                            Response.Redirect("Login.aspx");
-                        //}
-                        //else
-                        //{
-                        //    lblIncompleteForm.Visible = true;
-                        //    lblIncompleteForm.Text = "Username or Email already exists in system";
-                        //}
-                    }
-                    else
-                    {
-                        lblIncompleteForm.Visible = true;
-                        lblIncompleteForm.Text = "Please fill out all required forms (*)";
-                    }
-                }
+                
             }
-            //Passwords do not match
+            
             else
             {
                 lblPasswordMismatch.Visible = true;
-                lblPasswordMismatch.Text = "Passwords do not match";
+                lblPasswordMismatch.Text = "Password Mismatch!";
             }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("LogIn.aspx");
         }
     }
 }
-    

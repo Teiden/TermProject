@@ -21,6 +21,7 @@ namespace TermProject_3342
         {
             string mercEmail = Session["mercEmail"].ToString();
             DataSet validEmail = pxy.EmailExists(mercEmail);
+            
             if (validEmail.Tables.Count <= 0)
             {
                 Response.Redirect("LandingPage.aspx");
