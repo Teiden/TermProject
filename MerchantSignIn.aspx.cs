@@ -89,7 +89,7 @@ namespace TermProject_3342
                 DataSet MerchantName = pxy.MerchantExists(mercName);
                 if (MerchantName.Tables.Count > 0)
                 {
-                    lblRegResp.Text = "This Merchant Already Exists"; //Two Mercahnts cannot have the same name
+                    lblRegResp.Text = "This Merchant Already Exists"; //Two Merchants cannot have the same name
                     lblRegResp.Visible = true;
                 }
                 else
@@ -112,8 +112,8 @@ namespace TermProject_3342
         {
             if (txtRegPassword.Text == txtRegConfirm.Text)
             {
-                lblResponse.Text = "Passwords do not Match!";
-                lblResponse.Visible = true;
+                lblRegResp.Text = "Passwords do not Match!";
+                lblRegResp.Visible = true;
             }
            
         }
