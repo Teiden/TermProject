@@ -79,6 +79,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="Web References\MerchantStoreSvc1\MerchantStore.disco" />
     <Content Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -134,6 +135,11 @@
     <Compile Include="RegisterCustomer.aspx.designer.cs">
       <DependentUpon>RegisterCustomer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\MerchantStoreSvc1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\MerchantStoreSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +153,11 @@
     <None Include="Properties\PublishProfiles\Allen.pubxml" />
     <Content Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
     <Content Include="Web References\MerchantStoreSvc\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\MerchantStoreSvc1\MerchantStore.wsdl" />
+    <Content Include="Web References\MerchantStoreSvc1\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -166,6 +177,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:1729/MerchantStore.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MerchantStoreSvc1\</RelPath>
+      <UpdateFromURL>http://localhost:1729/MerchantStore.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc1_MerchantStore</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:8276/MerchantStore.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MerchantStoreSvc\</RelPath>
