@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerPage.aspx" />
     <Content Include="Images\Hemp.jpg" />
     <Content Include="LandingPage.aspx" />
     <Content Include="LogIn.aspx" />
@@ -87,6 +88,13 @@
     <Content Include="RegisterCustomer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerPage.aspx.cs">
+      <DependentUpon>CustomerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPage.aspx.designer.cs">
+      <DependentUpon>CustomerPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LandingPage.aspx.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
