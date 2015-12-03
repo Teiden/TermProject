@@ -19,6 +19,9 @@ namespace TermProject_3342
             ddlDepartments.DataSource = pxy.GetDepartments();
             ddlDepartments.DataBind();
 
+            gvProducts.DataSource = pxy.GetProductCatalog(ddlDepartments.SelectedValue.ToString());
+            gvProducts.DataBind();
+
 
         }
     }

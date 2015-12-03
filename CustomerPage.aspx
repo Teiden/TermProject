@@ -20,7 +20,12 @@
 
         <br/>
         <asp:GridView ID="gvProducts" runat="server">
+            <Columns>
+                <asp:ImageField>
+                </asp:ImageField>
+            </Columns>
         </asp:GridView>
+        <asp:Button ID="Button1" runat="server" Text="Add to Cart" />
         <br/>
         <br/>
 
