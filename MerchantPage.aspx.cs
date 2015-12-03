@@ -19,13 +19,21 @@ namespace TermProject_3342
         MerchantStoreSvc.MerchantStore pxy = new MerchantStoreSvc.MerchantStore();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string mercEmail = Session["mercEmail"].ToString();
-            DataSet validEmail = pxy.EmailExists(mercEmail);
-            
-            if (validEmail.Tables.Count <= 0)
+            if (Session["Email"] != null)
+            {
+                string mercEmail = Session["Email"].ToString();
+                DataSet validEmail = pxy.EmailExists(mercEmail);
+
+                if (validEmail.Tables.Count <= 0)
+                {
+                    Response.Redirect("LandingPage.aspx");
+                }
+            }
+            else
             {
                 Response.Redirect("LandingPage.aspx");
             }
+           
         }
     }
 }

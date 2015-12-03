@@ -26,20 +26,10 @@ namespace TermProject_3342.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8276/MerchantStore.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1729/MerchantStore.asmx")]
         public string TermProject_3342_MerchantStoreSvc_MerchantStore {
             get {
                 return ((string)(this["TermProject_3342_MerchantStoreSvc_MerchantStore"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1729/MerchantStore.asmx")]
-        public string TermProject_3342_MerchantStoreSvc1_MerchantStore {
-            get {
-                return ((string)(this["TermProject_3342_MerchantStoreSvc1_MerchantStore"]));
             }
         }
     }

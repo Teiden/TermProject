@@ -86,8 +86,8 @@ namespace TermProject_3342
             }
             else
             {
-                DataSet MerchantName = pxy.MerchantExists(mercName);
-                if (MerchantName.Tables.Count > 0)
+                int MerchantName = pxy.MerchantExists(mercName);
+                if (MerchantName > 0)
                 {
                     lblRegResp.Text = "This Merchant Already Exists"; //Two Merchants cannot have the same name
                     lblRegResp.Visible = true;

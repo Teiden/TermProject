@@ -92,14 +92,7 @@
       <s:element name="MerchantExistsResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="MerchantExistsResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantExistsResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -445,10 +438,10 @@
   </wsdl:binding>
   <wsdl:service name="MerchantStore">
     <wsdl:port name="MerchantStoreSoap" binding="tns:MerchantStoreSoap">
-      <soap:address location="http://localhost:8276/MerchantStore.asmx" />
+      <soap:address location="http://localhost:1729/MerchantStore.asmx" />
     </wsdl:port>
     <wsdl:port name="MerchantStoreSoap12" binding="tns:MerchantStoreSoap12">
-      <soap12:address location="http://localhost:8276/MerchantStore.asmx" />
+      <soap12:address location="http://localhost:1729/MerchantStore.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

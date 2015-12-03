@@ -229,10 +229,10 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/MerchantExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet MerchantExists(string mercName) {
+        public int MerchantExists(string mercName) {
             object[] results = this.Invoke("MerchantExists", new object[] {
                         mercName});
-            return ((System.Data.DataSet)(results[0]));
+            return ((int)(results[0]));
         }
         
         /// <remarks/>
@@ -547,10 +547,10 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
-        public System.Data.DataSet Result {
+        public int Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataSet)(this.results[0]));
+                return ((int)(this.results[0]));
             }
         }
     }

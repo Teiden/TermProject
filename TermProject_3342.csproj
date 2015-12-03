@@ -79,8 +79,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\MerchantStoreSvc1\MerchantStore.disco" />
-    <Content Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
+    <None Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -135,11 +134,6 @@
     <Compile Include="RegisterCustomer.aspx.designer.cs">
       <DependentUpon>RegisterCustomer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web References\MerchantStoreSvc1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Web References\MerchantStoreSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,16 +145,11 @@
     <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache" />
     <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\PublishProfiles\Allen.pubxml" />
-    <Content Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
-    <Content Include="Web References\MerchantStoreSvc\Reference.map">
+    <None Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
+    <None Include="Web References\MerchantStoreSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <Content Include="Web References\MerchantStoreSvc1\MerchantStore.wsdl" />
-    <Content Include="Web References\MerchantStoreSvc1\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -171,27 +160,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferenceUrl Include="http://localhost:1729/MerchantStore.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\MerchantStoreSvc1\</RelPath>
-      <UpdateFromURL>http://localhost:1729/MerchantStore.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc1_MerchantStore</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:8276/MerchantStore.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MerchantStoreSvc\</RelPath>
-      <UpdateFromURL>http://localhost:8276/MerchantStore.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:1729/MerchantStore.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -199,6 +174,9 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc_MerchantStore</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
