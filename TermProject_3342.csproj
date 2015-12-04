@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,12 +58,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerAccountPage.aspx" />
     <Content Include="CustomerPage.aspx" />
     <Content Include="Images\Hemp.jpg" />
     <Content Include="LandingPage.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="MerchantPage.aspx" />
     <Content Include="MerchantSignIn.aspx" />
+    <Content Include="ShoppingCart.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.pdb" />
@@ -87,6 +90,13 @@
     <Content Include="RegisterCustomer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerAccountPage.aspx.cs">
+      <DependentUpon>CustomerAccountPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerAccountPage.aspx.designer.cs">
+      <DependentUpon>CustomerAccountPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPage.aspx.cs">
       <DependentUpon>CustomerPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +137,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="UtilitiesLibrary\Connection.cs" />
     <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
