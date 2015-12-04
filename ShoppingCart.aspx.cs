@@ -28,8 +28,8 @@ namespace TermProject_3342
 
             string user = Session["Username"].ToString();
 
-            DataSet cart = pxy.GetCart(user);
-            Session["cart"] = cart;
+           // DataSet cart = pxy.GetCart(user);
+           // Session["cart"] = cart;
 
         }
     }
