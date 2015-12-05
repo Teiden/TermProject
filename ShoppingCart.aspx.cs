@@ -29,9 +29,9 @@ namespace TermProject_3342
             string user = Session["Username"].ToString();
 
 
-            DataSet cart = pxy.(user);
+           // DataSet cart = pxy.(user);
 
-            Session["cart"] = cart;
+            // Session["cart"] = cart;
 
         }
     }
