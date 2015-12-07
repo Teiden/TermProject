@@ -30,6 +30,8 @@ namespace TermProject_3342.MerchantStoreSvc {
     [System.Web.Services.WebServiceBindingAttribute(Name="MerchantStoreSoap", Namespace="http://tempuri.org/")]
     public partial class MerchantStore : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback GetPasswordOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDepartmentsOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetProductCatalogOperationCompleted;
@@ -87,6 +89,9 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
+        public event GetPasswordCompletedEventHandler GetPasswordCompleted;
+        
+        /// <remarks/>
         public event GetDepartmentsCompletedEventHandler GetDepartmentsCompleted;
         
         /// <remarks/>
@@ -112,6 +117,35 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event RegisterCustomerCompletedEventHandler RegisterCustomerCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetPassword(string emailRecipient) {
+            object[] results = this.Invoke("GetPassword", new object[] {
+                        emailRecipient});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPasswordAsync(string emailRecipient) {
+            this.GetPasswordAsync(emailRecipient, null);
+        }
+        
+        /// <remarks/>
+        public void GetPasswordAsync(string emailRecipient, object userState) {
+            if ((this.GetPasswordOperationCompleted == null)) {
+                this.GetPasswordOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPasswordOperationCompleted);
+            }
+            this.InvokeAsync("GetPassword", new object[] {
+                        emailRecipient}, this.GetPasswordOperationCompleted, userState);
+        }
+        
+        private void OnGetPasswordOperationCompleted(object arg) {
+            if ((this.GetPasswordCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPasswordCompleted(this, new GetPasswordCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetDepartments", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -422,6 +456,32 @@ namespace TermProject_3342.MerchantStoreSvc {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void GetPasswordCompletedEventHandler(object sender, GetPasswordCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
         }
     }
     

@@ -8,7 +8,7 @@
     <title></title>
 </head>
 <body>
-    <h1>Happy Hipster's Merchant Portal</h1>
+    <h1>Happy Hipsters' Merchant Portal</h1>
     <form id="form1" runat="server">
     <div class="absoluteLeft">
     <h2>Already a Registered Merchant?</h2>
@@ -26,6 +26,8 @@
         <asp:Button ID="btnMercLogIn" CSSClass="login" runat="server" OnClick="validateMercLogIn" Text="Log Me In" />
         <br />
         <br />
+        <br />
+        <asp:Button ID="btnForgotPassword" CSSClass="login" runat="server" OnClick="btnForgotPassword_Click" Text="Forgot Password" />
     </div>
         <div class="absoluteRight">
             <h2>Want to be a Registered Merchant?</h2>

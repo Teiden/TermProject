@@ -30,6 +30,11 @@ namespace TermProject_3342
         {
 
         }
+
+        protected void btnForgotPassword_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("ForgotPassword.aspx");
+        }
         protected void validateMercLogIn(object sender, EventArgs e) {
             string mercEmail = txtMercEmail.Text;
             string mercPassword = txtMercPassword.Text;

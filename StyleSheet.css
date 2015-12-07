@@ -52,16 +52,16 @@ div.absoluteLeft {
         opacity:.75;
         top:20%;
         left:15%;
-    height: 1130px;
+    /*height: 1130px;*/
 }
 div.merchant {
         position:absolute;
         padding-left: 15px;
         background-color:#e0ffff;
-        width:30%;
+        width:50%;
         opacity:.75;
         top:50%;
-        left:55%;
+        left:25%;
 
 }
 div.footer {
@@ -81,19 +81,17 @@ div.footer {
     width:90%;
     height:60px;
     text-align:center;
-    margin-left:25px;
+    margin-left:0px;
     font-family:Arial, Helvetica, sans-serif;
 	font-size:18px;
-    
+    margin-top: 0px;
 }
 .login {
     border-style: solid;
     border-color: inherit;
     border-width: medium;
-    width:25%;
-    height:30px;
     text-align:center;
-    margin-left:75%;
+    margin-left:60%;
     font-family:Arial, Helvetica, sans-serif;
 	font-size:18px;
    
