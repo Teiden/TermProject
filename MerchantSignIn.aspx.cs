@@ -62,8 +62,8 @@ namespace TermProject_3342
 	            }
                 else
 	            {
-                    DataSet API = pxy.APIExists(mercAPI);
-                    if (!API.Tables.Contains(mercAPI))
+                    string API = pxy.APIExists(mercAPI);
+                    if (API != mercAPI)
                     {
                         lblResponse.Text = "Invalid API!";
                         lblResponse.Visible = true;
