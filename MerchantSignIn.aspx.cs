@@ -49,20 +49,21 @@ namespace TermProject_3342
             else
             {
                 DataSet validEmail = pxy.EmailExists(mercEmail);
-                if (validEmail.Tables.Count <= 0)
+                string password = (string)validEmail.Tables[0].Rows[0][5];
+                if (validEmail.Tables[0].Rows.Count <= 0)
 	            {
 		            lblResponse.Text = "Email not Found!";
                     lblResponse.Visible = true;
 	            }
-                else if (!validEmail.Tables.Contains(mercPassword))
+                else if (password != mercPassword)
 	            {
 		            lblResponse.Text = "Incorrect Password!";
                     lblResponse.Visible = true;                       
 	            }
                 else
 	            {
-                    DataSet API = pxy.APIExists(mercAPI);
-                    if (!API.Tables.Contains(mercAPI))
+                    string API = pxy.APIExists(mercAPI);
+                    if (API != mercAPI)
                     {
                         lblResponse.Text = "Invalid API!";
                         lblResponse.Visible = true;
