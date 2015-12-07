@@ -2,6 +2,20 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailRecipient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetDepartments">
         <s:complexType />
       </s:element>
@@ -176,6 +190,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPasswordResponse" />
+  </wsdl:message>
   <wsdl:message name="GetDepartmentsSoapIn">
     <wsdl:part name="parameters" element="tns:GetDepartments" />
   </wsdl:message>
@@ -231,6 +251,10 @@
     <wsdl:part name="parameters" element="tns:RegisterCustomerResponse" />
   </wsdl:message>
   <wsdl:portType name="MerchantStoreSoap">
+    <wsdl:operation name="GetPassword">
+      <wsdl:input message="tns:GetPasswordSoapIn" />
+      <wsdl:output message="tns:GetPasswordSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetDepartments">
       <wsdl:input message="tns:GetDepartmentsSoapIn" />
       <wsdl:output message="tns:GetDepartmentsSoapOut" />
@@ -270,6 +294,15 @@
   </wsdl:portType>
   <wsdl:binding name="MerchantStoreSoap" type="tns:MerchantStoreSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPassword">
+      <soap:operation soapAction="http://tempuri.org/GetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDepartments">
       <soap:operation soapAction="http://tempuri.org/GetDepartments" style="document" />
       <wsdl:input>
@@ -354,6 +387,15 @@
   </wsdl:binding>
   <wsdl:binding name="MerchantStoreSoap12" type="tns:MerchantStoreSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDepartments">
       <soap12:operation soapAction="http://tempuri.org/GetDepartments" style="document" />
       <wsdl:input>

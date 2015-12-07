@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="CustomerAccountPage.aspx" />
     <Content Include="CustomerPage.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\Hemp.jpg" />
     <Content Include="LandingPage.aspx" />
     <Content Include="LogIn.aspx" />
@@ -83,7 +84,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
+    <None Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -103,6 +104,13 @@
     </Compile>
     <Compile Include="CustomerPage.aspx.designer.cs">
       <DependentUpon>CustomerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="LandingPage.aspx.cs">
       <DependentUpon>LandingPage.aspx</DependentUpon>
@@ -146,6 +154,7 @@
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="UtilitiesLibrary\Connection.cs" />
+    <Compile Include="UtilitiesLibrary\Email.cs" />
     <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -170,11 +179,11 @@
     <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache" />
     <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\PublishProfiles\Allen.pubxml" />
-    <Content Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
-    <Content Include="Web References\MerchantStoreSvc\Reference.map">
+    <None Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
+    <None Include="Web References\MerchantStoreSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -183,9 +192,6 @@
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -202,6 +208,9 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc_MerchantStore</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
