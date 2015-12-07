@@ -54,6 +54,8 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         private System.Threading.SendOrPostCallback StoreCartOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CustomerEmailExistsOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -127,6 +129,9 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event StoreCartCompletedEventHandler StoreCartCompleted;
+        
+        /// <remarks/>
+        public event CustomerEmailExistsCompletedEventHandler CustomerEmailExistsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -511,6 +516,35 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CustomerEmailExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet CustomerEmailExists(string customerEmail) {
+            object[] results = this.Invoke("CustomerEmailExists", new object[] {
+                        customerEmail});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CustomerEmailExistsAsync(string customerEmail) {
+            this.CustomerEmailExistsAsync(customerEmail, null);
+        }
+        
+        /// <remarks/>
+        public void CustomerEmailExistsAsync(string customerEmail, object userState) {
+            if ((this.CustomerEmailExistsOperationCompleted == null)) {
+                this.CustomerEmailExistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCustomerEmailExistsOperationCompleted);
+            }
+            this.InvokeAsync("CustomerEmailExists", new object[] {
+                        customerEmail}, this.CustomerEmailExistsOperationCompleted, userState);
+        }
+        
+        private void OnCustomerEmailExistsOperationCompleted(object arg) {
+            if ((this.CustomerEmailExistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CustomerEmailExistsCompleted(this, new CustomerEmailExistsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -837,6 +871,32 @@ namespace TermProject_3342.MerchantStoreSvc {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void CustomerEmailExistsCompletedEventHandler(object sender, CustomerEmailExistsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CustomerEmailExistsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CustomerEmailExistsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
             }
         }
     }

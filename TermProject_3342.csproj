@@ -66,7 +66,6 @@
     <Content Include="LogIn.aspx" />
     <Content Include="MerchantPage.aspx" />
     <Content Include="MerchantSignIn.aspx" />
-    <Content Include="MerchantStore.asmx" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
@@ -147,9 +146,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="MerchantStore.asmx.cs">
-      <DependentUpon>MerchantStore.asmx</DependentUpon>
-    </Compile>
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,10 +180,10 @@
     <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\PublishProfiles\Allen.pubxml" />
     <None Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
-    <None Include="Web References\MerchantStoreSvc\Reference.map">
+    <Content Include="Web References\MerchantStoreSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

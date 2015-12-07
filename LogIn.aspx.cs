@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +10,8 @@ namespace TermProject_3342
 {
     public partial class LogIn : System.Web.UI.Page
     {
-        
+
+        MerchantStoreSvc.MerchantStore pxy = new MerchantStoreSvc.MerchantStore();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,6 +40,9 @@ namespace TermProject_3342
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            string customerEmail = txtUsername.Text;
+            string customerPassword = txtPassword.Text;
+          
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
                 lblError.Text = "Please fill out all forms!";
@@ -63,19 +68,41 @@ namespace TermProject_3342
                             termCookie.Expires = DateTime.Now.AddDays(-1d);
                             Response.Cookies.Add(termCookie);
                         }
-                        Session["customerEmail"] = txtUsername.Text;
-                        Response.Redirect("CustomerPage.aspx");
 
-              
+                        DataSet validEmail = pxy.CustomerEmailExists(customerEmail);
+                        string password = (string)validEmail.Tables[0].Rows[0][1];
+                    if (validEmail.Tables[0].Rows.Count <= 0)
+
+                        {
+                            lblError.Text = "Email not Found!";
+                            lblError.Visible = true;
+                        }
+                        else if (password!=customerPassword)
+                        {
+                            lblError.Text = "Incorrect Password!";
+                            lblError.Visible = true;
+                        }
+
+                        
+                         
+                    else
+                    {
+                            Session["customerEmail"] = txtUsername.Text;
+                        Response.Redirect("CustomerPage.aspx");
+                    }
+                
                 }
 
                 else
                 {
                     lblError.Text = "Please Choose ONLY ONE Checkbox!!!";
                 }
+
+
             }
         }
-
+        
+      
 
 
 
