@@ -16,11 +16,12 @@ namespace TermProject_3342
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            ddlDepartments.DataSource = pxy.GetDepartments();
-            ddlDepartments.DataBind();
+     //       ddlDepartments.DataSource = pxy.GetDepartments();
+           
+          //  ddlDepartments.DataBind();
 
-            gvProducts.DataSource = pxy.GetProductCatalog(ddlDepartments.SelectedValue.ToString());
-            gvProducts.DataBind();
+        //    gvProducts.DataSource = pxy.GetProductCatalog(ddlDepartments.SelectedValue.ToString());
+          //  gvProducts.DataBind();
 
 
         }

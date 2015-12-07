@@ -20,16 +20,16 @@ namespace TermProject_3342
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] == null)
+            if (Session["customerEmail"] == null)
 
             { 
                 Response.Redirect("Login.aspx"); 
             }
 
-            string user = Session["Username"].ToString();
+            string customerEmail = Session["customerEmail"].ToString();
 
-
-           // DataSet cart = pxy.(user);
+            gvShoppingCart.DataSource = pxy.FindCart(customerEmail);
+            gvShoppingCart.DataBind();
 
             // Session["cart"] = cart;
 

@@ -188,6 +188,49 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="FindCart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindCartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindCartResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoreCart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialization">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StoreCartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StoreCartResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetPasswordSoapIn">
@@ -250,6 +293,18 @@
   <wsdl:message name="RegisterCustomerSoapOut">
     <wsdl:part name="parameters" element="tns:RegisterCustomerResponse" />
   </wsdl:message>
+  <wsdl:message name="FindCartSoapIn">
+    <wsdl:part name="parameters" element="tns:FindCart" />
+  </wsdl:message>
+  <wsdl:message name="FindCartSoapOut">
+    <wsdl:part name="parameters" element="tns:FindCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="StoreCartSoapIn">
+    <wsdl:part name="parameters" element="tns:StoreCart" />
+  </wsdl:message>
+  <wsdl:message name="StoreCartSoapOut">
+    <wsdl:part name="parameters" element="tns:StoreCartResponse" />
+  </wsdl:message>
   <wsdl:portType name="MerchantStoreSoap">
     <wsdl:operation name="GetPassword">
       <wsdl:input message="tns:GetPasswordSoapIn" />
@@ -290,6 +345,14 @@
     <wsdl:operation name="RegisterCustomer">
       <wsdl:input message="tns:RegisterCustomerSoapIn" />
       <wsdl:output message="tns:RegisterCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCart">
+      <wsdl:input message="tns:FindCartSoapIn" />
+      <wsdl:output message="tns:FindCartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreCart">
+      <wsdl:input message="tns:StoreCartSoapIn" />
+      <wsdl:output message="tns:StoreCartSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="MerchantStoreSoap" type="tns:MerchantStoreSoap">
@@ -384,6 +447,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FindCart">
+      <soap:operation soapAction="http://tempuri.org/FindCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCart">
+      <soap:operation soapAction="http://tempuri.org/StoreCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="MerchantStoreSoap12" type="tns:MerchantStoreSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -470,6 +551,24 @@
     </wsdl:operation>
     <wsdl:operation name="RegisterCustomer">
       <soap12:operation soapAction="http://tempuri.org/RegisterCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCart">
+      <soap12:operation soapAction="http://tempuri.org/FindCart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCart">
+      <soap12:operation soapAction="http://tempuri.org/StoreCart" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

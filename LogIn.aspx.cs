@@ -63,8 +63,8 @@ namespace TermProject_3342
                             termCookie.Expires = DateTime.Now.AddDays(-1d);
                             Response.Cookies.Add(termCookie);
                         }
-                        Session["Username"] = txtUsername.Text;
-                        Response.Redirect("MerchantPage.aspx");
+                        Session["customerEmail"] = txtUsername.Text;
+                        Response.Redirect("CustomerPage.aspx");
 
               
                 }

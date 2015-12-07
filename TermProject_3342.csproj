@@ -66,6 +66,7 @@
     <Content Include="LogIn.aspx" />
     <Content Include="MerchantPage.aspx" />
     <Content Include="MerchantSignIn.aspx" />
+    <Content Include="MerchantStore.asmx" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UtilitiesLibrary\bin\Debug\UtilitiesLibrary.dll" />
@@ -146,6 +147,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="MerchantStore.asmx.cs">
+      <DependentUpon>MerchantStore.asmx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -194,6 +198,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
@@ -208,9 +215,6 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TermProject_3342_MerchantStoreSvc_MerchantStore</CachedSettingsPropName>
     </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
