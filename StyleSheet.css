@@ -96,3 +96,13 @@ div.footer {
 	font-size:18px;
    
 }
+div.absoluteRight2 {
+        position:absolute;
+        padding-left: 15px;
+        background-color:#e0ffff;
+        width:30%;
+        opacity:.75;
+        top:60%;
+        left:55%;
+
+}
