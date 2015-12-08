@@ -27,12 +27,16 @@ namespace TermProject_3342
             }
 
             string customerEmail = Session["customerEmail"].ToString();
+            DataSet shoppingCart = pxy.FindCart(customerEmail);
 
-            //gvShoppingCart.DataSource = pxy.FindCart(customerEmail);
-            //gvShoppingCart.DataBind();
+            gvShoppingCart.DataSource = shoppingCart;
+            gvShoppingCart.DataBind();
 
-            //// Session["cart"] = cart;
+
+            Session["cart"] = shoppingCart.Tables[0];
+            
 
         }
     }
 }
+

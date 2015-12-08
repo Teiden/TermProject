@@ -517,24 +517,24 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CustomerEmailExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet CustomerEmailExists(string custEmail) {
+        public System.Data.DataSet CustomerEmailExists(string customerEmail) {
             object[] results = this.Invoke("CustomerEmailExists", new object[] {
-                        custEmail});
+                        customerEmail});
             return ((System.Data.DataSet)(results[0]));
         }
         
         /// <remarks/>
-        public void CustomerEmailExistsAsync(string custEmail) {
-            this.CustomerEmailExistsAsync(custEmail, null);
+        public void CustomerEmailExistsAsync(string customerEmail) {
+            this.CustomerEmailExistsAsync(customerEmail, null);
         }
         
         /// <remarks/>
-        public void CustomerEmailExistsAsync(string custEmail, object userState) {
+        public void CustomerEmailExistsAsync(string customerEmail, object userState) {
             if ((this.CustomerEmailExistsOperationCompleted == null)) {
                 this.CustomerEmailExistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCustomerEmailExistsOperationCompleted);
             }
             this.InvokeAsync("CustomerEmailExists", new object[] {
-                        custEmail}, this.CustomerEmailExistsOperationCompleted, userState);
+                        customerEmail}, this.CustomerEmailExistsOperationCompleted, userState);
         }
         
         private void OnCustomerEmailExistsOperationCompleted(object arg) {
