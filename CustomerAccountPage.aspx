@@ -24,7 +24,7 @@
         </p>
         <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 1114px; top: 7px; position: absolute; height: 235px; width: 391px">
+            <asp:GridView ID="gvAccount" runat="server" style="z-index: 1; left: 552px; top: 3px; position: absolute; height: 235px; width: 391px">
             </asp:GridView>
         </p>
         <p>
@@ -46,7 +46,8 @@
         <p>
             &nbsp;</p>
         <p>
-            &nbsp;</p>
+            <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Logout!" />
+        </p>
         <p>
             &nbsp;</p>
         <p>

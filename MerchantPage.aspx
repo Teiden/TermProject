@@ -13,6 +13,16 @@
     <div>
     
     </div>
+        <asp:GridView ID="GridView1" runat="server">
+            <Columns>
+                <asp:TemplateField></asp:TemplateField>
+                <asp:TemplateField></asp:TemplateField>
+                <asp:TemplateField></asp:TemplateField>
+            </Columns>
+            <EmptyDataTemplate>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </EmptyDataTemplate>
+        </asp:GridView>
     </form>
 </body>
 </html>
