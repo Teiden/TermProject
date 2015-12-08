@@ -84,7 +84,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
+    <Content Include="Web References\MerchantStoreSvc\MerchantStore.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -153,6 +153,7 @@
     <Compile Include="ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShoppingCart.cs" />
     <Compile Include="UtilitiesLibrary\Connection.cs" />
     <Compile Include="UtilitiesLibrary\Email.cs" />
     <Compile Include="UtilitiesLibrary\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -179,7 +180,7 @@
     <Content Include="UtilitiesLibrary\obj\Debug\UtilitiesLibrary.csprojResolveAssemblyReference.cache" />
     <Content Include="UtilitiesLibrary\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\PublishProfiles\Allen.pubxml" />
-    <None Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
+    <Content Include="Web References\MerchantStoreSvc\MerchantStore.wsdl" />
     <Content Include="Web References\MerchantStoreSvc\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

@@ -12,7 +12,7 @@ using UtilitiesLibrary;
 
 namespace TermProject_3342
 {
-    public partial class ShoppingCart : System.Web.UI.Page
+    public partial class ShoppingCartsbc : System.Web.UI.Page
     {
 
         double cost = 0;
