@@ -30,6 +30,10 @@ namespace TermProject_3342.MerchantStoreSvc {
     [System.Web.Services.WebServiceBindingAttribute(Name="MerchantStoreSoap", Namespace="http://tempuri.org/")]
     public partial class MerchantStore : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback updateURLOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetMerchantInfoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetPasswordOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDepartmentsOperationCompleted;
@@ -95,6 +99,12 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
+        public event updateURLCompletedEventHandler updateURLCompleted;
+        
+        /// <remarks/>
+        public event GetMerchantInfoCompletedEventHandler GetMerchantInfoCompleted;
+        
+        /// <remarks/>
         public event GetPasswordCompletedEventHandler GetPasswordCompleted;
         
         /// <remarks/>
@@ -132,6 +142,66 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event CustomerEmailExistsCompletedEventHandler CustomerEmailExistsCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateURL", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string updateURL(string mercName, string mercURL) {
+            object[] results = this.Invoke("updateURL", new object[] {
+                        mercName,
+                        mercURL});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void updateURLAsync(string mercName, string mercURL) {
+            this.updateURLAsync(mercName, mercURL, null);
+        }
+        
+        /// <remarks/>
+        public void updateURLAsync(string mercName, string mercURL, object userState) {
+            if ((this.updateURLOperationCompleted == null)) {
+                this.updateURLOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateURLOperationCompleted);
+            }
+            this.InvokeAsync("updateURL", new object[] {
+                        mercName,
+                        mercURL}, this.updateURLOperationCompleted, userState);
+        }
+        
+        private void OnupdateURLOperationCompleted(object arg) {
+            if ((this.updateURLCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.updateURLCompleted(this, new updateURLCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetMerchantInfo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet GetMerchantInfo(string mercEmail) {
+            object[] results = this.Invoke("GetMerchantInfo", new object[] {
+                        mercEmail});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetMerchantInfoAsync(string mercEmail) {
+            this.GetMerchantInfoAsync(mercEmail, null);
+        }
+        
+        /// <remarks/>
+        public void GetMerchantInfoAsync(string mercEmail, object userState) {
+            if ((this.GetMerchantInfoOperationCompleted == null)) {
+                this.GetMerchantInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMerchantInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetMerchantInfo", new object[] {
+                        mercEmail}, this.GetMerchantInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetMerchantInfoOperationCompleted(object arg) {
+            if ((this.GetMerchantInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetMerchantInfoCompleted(this, new GetMerchantInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -517,24 +587,24 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CustomerEmailExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet CustomerEmailExists(string customerEmail) {
+        public System.Data.DataSet CustomerEmailExists(string custEmail) {
             object[] results = this.Invoke("CustomerEmailExists", new object[] {
-                        customerEmail});
+                        custEmail});
             return ((System.Data.DataSet)(results[0]));
         }
         
         /// <remarks/>
-        public void CustomerEmailExistsAsync(string customerEmail) {
-            this.CustomerEmailExistsAsync(customerEmail, null);
+        public void CustomerEmailExistsAsync(string custEmail) {
+            this.CustomerEmailExistsAsync(custEmail, null);
         }
         
         /// <remarks/>
-        public void CustomerEmailExistsAsync(string customerEmail, object userState) {
+        public void CustomerEmailExistsAsync(string custEmail, object userState) {
             if ((this.CustomerEmailExistsOperationCompleted == null)) {
                 this.CustomerEmailExistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCustomerEmailExistsOperationCompleted);
             }
             this.InvokeAsync("CustomerEmailExists", new object[] {
-                        customerEmail}, this.CustomerEmailExistsOperationCompleted, userState);
+                        custEmail}, this.CustomerEmailExistsOperationCompleted, userState);
         }
         
         private void OnCustomerEmailExistsOperationCompleted(object arg) {
@@ -560,6 +630,58 @@ namespace TermProject_3342.MerchantStoreSvc {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void updateURLCompletedEventHandler(object sender, updateURLCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class updateURLCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal updateURLCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void GetMerchantInfoCompletedEventHandler(object sender, GetMerchantInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMerchantInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMerchantInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
         }
     }
     

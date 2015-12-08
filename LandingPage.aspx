@@ -53,14 +53,19 @@
                         <asp:Button ID="btnNew" runat="server" Text="A New Member" OnClick="btnNew_Click" /></td>
                 </tr>
             </table>
-            <br /><br />
-
-        </div>
-        <div class="merchant">
+            <br />
             <h2>Are you a merchant?</h2>
             <h3>Want to sell your products on our site?</h3>
             <p style="text-align:center"><a href="MerchantSignIn.aspx">Visit our merchant portal</a></p>
+
+            <br /><br />
+
         </div>
+       <%-- <div class="absoluteRight">
+            <h2>Are you a merchant?</h2>
+            <h3>Want to sell your products on our site?</h3>
+            <p style="text-align:center"><a href="MerchantSignIn.aspx">Visit our merchant portal</a></p>
+        </div>--%>
     </form>
 </body>
 </html>
