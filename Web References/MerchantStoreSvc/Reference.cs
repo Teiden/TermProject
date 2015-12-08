@@ -50,6 +50,12 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         private System.Threading.SendOrPostCallback RegisterCustomerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback FindCartOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback StoreCartOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CustomerEmailExistsOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -117,6 +123,15 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event RegisterCustomerCompletedEventHandler RegisterCustomerCompleted;
+        
+        /// <remarks/>
+        public event FindCartCompletedEventHandler FindCartCompleted;
+        
+        /// <remarks/>
+        public event StoreCartCompletedEventHandler StoreCartCompleted;
+        
+        /// <remarks/>
+        public event CustomerEmailExistsCompletedEventHandler CustomerEmailExistsCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetPassword", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -441,6 +456,95 @@ namespace TermProject_3342.MerchantStoreSvc {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FindCart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet FindCart(string customer) {
+            object[] results = this.Invoke("FindCart", new object[] {
+                        customer});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void FindCartAsync(string customer) {
+            this.FindCartAsync(customer, null);
+        }
+        
+        /// <remarks/>
+        public void FindCartAsync(string customer, object userState) {
+            if ((this.FindCartOperationCompleted == null)) {
+                this.FindCartOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFindCartOperationCompleted);
+            }
+            this.InvokeAsync("FindCart", new object[] {
+                        customer}, this.FindCartOperationCompleted, userState);
+        }
+        
+        private void OnFindCartOperationCompleted(object arg) {
+            if ((this.FindCartCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.FindCartCompleted(this, new FindCartCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StoreCart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool StoreCart(string user, System.Data.DataSet serialization) {
+            object[] results = this.Invoke("StoreCart", new object[] {
+                        user,
+                        serialization});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void StoreCartAsync(string user, System.Data.DataSet serialization) {
+            this.StoreCartAsync(user, serialization, null);
+        }
+        
+        /// <remarks/>
+        public void StoreCartAsync(string user, System.Data.DataSet serialization, object userState) {
+            if ((this.StoreCartOperationCompleted == null)) {
+                this.StoreCartOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStoreCartOperationCompleted);
+            }
+            this.InvokeAsync("StoreCart", new object[] {
+                        user,
+                        serialization}, this.StoreCartOperationCompleted, userState);
+        }
+        
+        private void OnStoreCartOperationCompleted(object arg) {
+            if ((this.StoreCartCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StoreCartCompleted(this, new StoreCartCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CustomerEmailExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet CustomerEmailExists(string custEmail) {
+            object[] results = this.Invoke("CustomerEmailExists", new object[] {
+                        custEmail});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CustomerEmailExistsAsync(string custEmail) {
+            this.CustomerEmailExistsAsync(custEmail, null);
+        }
+        
+        /// <remarks/>
+        public void CustomerEmailExistsAsync(string custEmail, object userState) {
+            if ((this.CustomerEmailExistsOperationCompleted == null)) {
+                this.CustomerEmailExistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCustomerEmailExistsOperationCompleted);
+            }
+            this.InvokeAsync("CustomerEmailExists", new object[] {
+                        custEmail}, this.CustomerEmailExistsOperationCompleted, userState);
+        }
+        
+        private void OnCustomerEmailExistsOperationCompleted(object arg) {
+            if ((this.CustomerEmailExistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CustomerEmailExistsCompleted(this, new CustomerEmailExistsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -715,6 +819,84 @@ namespace TermProject_3342.MerchantStoreSvc {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void FindCartCompletedEventHandler(object sender, FindCartCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class FindCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal FindCartCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void StoreCartCompletedEventHandler(object sender, StoreCartCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class StoreCartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal StoreCartCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void CustomerEmailExistsCompletedEventHandler(object sender, CustomerEmailExistsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CustomerEmailExistsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CustomerEmailExistsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
             }
         }
     }
