@@ -62,16 +62,16 @@ namespace TermProject_3342
 	            }
                 else
 	            {
-                    string API = pxy.APIExists(mercAPI);
-                    if (API != mercAPI)
-                    {
-                        lblResponse.Text = "Invalid API!";
-                        lblResponse.Visible = true;
-                    }
-                    else
-                    {
-                        Response.Redirect("MerchantPage.aspx");
-                    }
+                  //  string API = pxy.APIExists(mercAPI);
+                    //if (API != mercAPI)
+                    //{
+                    //    lblResponse.Text = "Invalid API!";
+                    //    lblResponse.Visible = true;
+                    //}
+                    //else
+                    //{
+                    //    Response.Redirect("MerchantPage.aspx");
+                    //}
 	            }
 	
             }

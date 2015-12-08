@@ -10,7 +10,7 @@
 namespace TermProject_3342 {
     
     
-    public partial class ShoppingCart {
+    public partial class ShoppingCartsbc {
         
         /// <summary>
         /// form1 control.
