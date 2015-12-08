@@ -38,6 +38,8 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         private System.Threading.SendOrPostCallback GetDepartmentsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetCustomersOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetProductCatalogOperationCompleted;
         
         private System.Threading.SendOrPostCallback EmailExistsOperationCompleted;
@@ -109,6 +111,9 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         public event GetDepartmentsCompletedEventHandler GetDepartmentsCompleted;
+        
+        /// <remarks/>
+        public event GetCustomersCompletedEventHandler GetCustomersCompleted;
         
         /// <remarks/>
         public event GetProductCatalogCompletedEventHandler GetProductCatalogCompleted;
@@ -256,6 +261,35 @@ namespace TermProject_3342.MerchantStoreSvc {
             if ((this.GetDepartmentsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetDepartmentsCompleted(this, new GetDepartmentsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetCustomers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataSet GetCustomers(string customerEmail) {
+            object[] results = this.Invoke("GetCustomers", new object[] {
+                        customerEmail});
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCustomersAsync(string customerEmail) {
+            this.GetCustomersAsync(customerEmail, null);
+        }
+        
+        /// <remarks/>
+        public void GetCustomersAsync(string customerEmail, object userState) {
+            if ((this.GetCustomersOperationCompleted == null)) {
+                this.GetCustomersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCustomersOperationCompleted);
+            }
+            this.InvokeAsync("GetCustomers", new object[] {
+                        customerEmail}, this.GetCustomersOperationCompleted, userState);
+        }
+        
+        private void OnGetCustomersOperationCompleted(object arg) {
+            if ((this.GetCustomersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCustomersCompleted(this, new GetCustomersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -527,24 +561,24 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/FindCart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataSet FindCart(string customer) {
+        public System.Data.DataSet FindCart(string customerEmail) {
             object[] results = this.Invoke("FindCart", new object[] {
-                        customer});
+                        customerEmail});
             return ((System.Data.DataSet)(results[0]));
         }
         
         /// <remarks/>
-        public void FindCartAsync(string customer) {
-            this.FindCartAsync(customer, null);
+        public void FindCartAsync(string customerEmail) {
+            this.FindCartAsync(customerEmail, null);
         }
         
         /// <remarks/>
-        public void FindCartAsync(string customer, object userState) {
+        public void FindCartAsync(string customerEmail, object userState) {
             if ((this.FindCartOperationCompleted == null)) {
                 this.FindCartOperationCompleted = new System.Threading.SendOrPostCallback(this.OnFindCartOperationCompleted);
             }
             this.InvokeAsync("FindCart", new object[] {
-                        customer}, this.FindCartOperationCompleted, userState);
+                        customerEmail}, this.FindCartOperationCompleted, userState);
         }
         
         private void OnFindCartOperationCompleted(object arg) {
@@ -556,25 +590,25 @@ namespace TermProject_3342.MerchantStoreSvc {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StoreCart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool StoreCart(string user, System.Data.DataSet serialization) {
+        public bool StoreCart(string customerEmail, System.Data.DataSet serialization) {
             object[] results = this.Invoke("StoreCart", new object[] {
-                        user,
+                        customerEmail,
                         serialization});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void StoreCartAsync(string user, System.Data.DataSet serialization) {
-            this.StoreCartAsync(user, serialization, null);
+        public void StoreCartAsync(string customerEmail, System.Data.DataSet serialization) {
+            this.StoreCartAsync(customerEmail, serialization, null);
         }
         
         /// <remarks/>
-        public void StoreCartAsync(string user, System.Data.DataSet serialization, object userState) {
+        public void StoreCartAsync(string customerEmail, System.Data.DataSet serialization, object userState) {
             if ((this.StoreCartOperationCompleted == null)) {
                 this.StoreCartOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStoreCartOperationCompleted);
             }
             this.InvokeAsync("StoreCart", new object[] {
-                        user,
+                        customerEmail,
                         serialization}, this.StoreCartOperationCompleted, userState);
         }
         
@@ -724,6 +758,32 @@ namespace TermProject_3342.MerchantStoreSvc {
         private object[] results;
         
         internal GetDepartmentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    public delegate void GetCustomersCompletedEventHandler(object sender, GetCustomersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.34209")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCustomersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCustomersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

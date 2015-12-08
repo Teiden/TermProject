@@ -29,7 +29,7 @@ namespace TermProject_3342
             }
 
             CustomerEmail = Session["customerEmail"].ToString();
-            DataSet validEmail = pxy.EmailExists(CustomerEmail);
+            
 
 
 
@@ -49,20 +49,34 @@ namespace TermProject_3342
 
         protected void ddlDepartments_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DataSet products = pxy.GetProductCatalog(ddlDepartments.SelectedValue.ToString());
             gvProducts.Visible = true;
 
-            string x = ddlDepartments.SelectedValue.ToString();
-            gvProducts.DataSource = pxy.GetProductCatalog(ddlDepartments.SelectedValue.ToString());
+            Session["DeptProducts"] = products;
+            gvProducts.DataSource = products;
             gvProducts.DataBind();
+
         }
 
         protected void gvProducts_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            string user = Session["customerEmail"].ToString();
+            string customerEmail = Session["customerEmail"].ToString();
 
             int rowIndex = int.Parse(e.CommandArgument.ToString());
-            cart = (DataSet)Session["foundSet"];
+            cart = (DataSet)Session["DeptProducts"];
+            ShoppingCart.Cart(cart, rowIndex, customerEmail);
+            
+                
+        }
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShoppingCart.aspx");
+        }
+
+        protected void btnManageAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerAccountPage.aspx");
         }
     }
 }

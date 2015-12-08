@@ -22,13 +22,14 @@
         <asp:GridView ID="gvProducts" runat="server" OnRowCommand="gvProducts_RowCommand">
             <Columns>
                 <asp:ImageField DataImageUrlField="ProductImageURL">
-                    <ItemStyle Height="300px" Width="350px" />
+                    <ItemStyle Height="80px" Width="100px" />
                 </asp:ImageField>
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="Button1" runat="server" Text="Add to Cart" />
+        <asp:Button ID="btnCheckout" runat="server" Text="Proceed to Checkout!" OnClick="btnCheckout_Click" Width="183px" />
         <br/>
+        <asp:Button ID="btnManageAccount" runat="server" OnClick="btnManageAccount_Click" Text="Account Settings" Width="182px" />
         <br/>
 
 

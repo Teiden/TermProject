@@ -28,7 +28,7 @@
         <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 107px; top: 292px; position: absolute; width: 66px;" Text="Submit" />
         </p>
         <asp:Label ID="lblDontHaveAccount" runat="server" style="z-index: 1; left: 76px; top: 343px; position: absolute" Text="(Don't Have an Account?)"></asp:Label>
-        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 106px; top: 366px; position: absolute; height: 26px; width: 70px;" Text="Register" OnClick="btnRegister_Click" />
+        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 114px; top: 366px; position: absolute; height: 26px; width: 70px;" Text="Register" OnClick="btnRegister_Click" />
     </div>
 
     </form>

@@ -26,15 +26,23 @@ namespace TermProject_3342
                 Response.Redirect("Login.aspx"); 
             }
 
+
+
             string customerEmail = Session["customerEmail"].ToString();
-            DataSet shoppingCart = pxy.FindCart(customerEmail);
-
-            gvShoppingCart.DataSource = shoppingCart;
-            gvShoppingCart.DataBind();
-
-
-            Session["cart"] = shoppingCart.Tables[0];
             
+            if(!IsPostBack)
+            {
+            gvShoppingCart.DataSource = Session["cart"];
+            gvShoppingCart.DataBind();
+            }
+
+           
+            
+
+        }
+
+        protected void btnPurchase_Click(object sender, EventArgs e)
+        {
 
         }
     }

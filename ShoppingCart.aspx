@@ -14,10 +14,18 @@
     <br />
     <br />
 
-        <asp:Label ID="lblCart" runat="server" Text="Please Review Your Cart and Proceed to Checkout"></asp:Label>
+        <asp:Label ID="lblCart" runat="server" Text="Please Review Your Cart and Checkout"></asp:Label>
     <br />
 
-        <asp:GridView ID="gvShoppingCart" runat="server"></asp:GridView>
+        <asp:GridView ID="gvShoppingCart" runat="server">
+            <Columns>
+                <asp:ImageField DataImageUrlField="ProductImageURL">
+                </asp:ImageField>
+                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" />
+            </Columns>
+         </asp:GridView>
+
+         <asp:Button ID="btnPurchase" runat="server" OnClick="btnPurchase_Click" Text="Checkout!" />
 
     </div>
     </form>
